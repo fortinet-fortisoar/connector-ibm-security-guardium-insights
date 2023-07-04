@@ -25,7 +25,7 @@
         "title": "Encoded Token",
         "name": "encoded_token",
         "description": "Encoded Token which you get when you craete a new API Key in IBM Security Guardium Insights. For details: https://www.ibm.com/docs/en/guardium-insights/3.0.x?topic=administering-api-keys#settings_api",
-        "type": "text",
+        "type": "password",
         "visible": true,
         "editable": true,
         "required": true
