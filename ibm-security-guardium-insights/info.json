@@ -442,12 +442,12 @@
         {
           "title": "Case ID",
           "name": "case_id",
-          "description": "Specify the case ID to retrieve from the IBM Security Guardium Insights. You can get Case ID from 'Get Cases List' action",
+          "description": "Specify the case ID to retrieve all the tasks linked to it from the IBM Security Guardium Insights. You can get Case ID from 'Get Cases List' action",
           "type": "text",
           "visible": true,
           "editable": true,
           "required": true,
-          "tooltip": "Specify the case ID to retrieve from the IBM Security Guardium Insights."
+          "tooltip": "Specify the case ID to retrieve all the tasks linked to it from the IBM Security Guardium Insights."
         },
         {
           "title": "Task ID",
@@ -1012,7 +1012,7 @@
               }
             },
             "tasks": {
-              "additionalProp1": "UNDEFINED"
+              "additionalProp1": ""
             },
             "users": [
               {
