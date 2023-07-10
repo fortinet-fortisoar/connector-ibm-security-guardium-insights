@@ -1,0 +1,1546 @@
+{
+  "name": "ibm-security-guardium-insights",
+  "version": "1.0.0",
+  "label": "IBM Security Guardium Insights",
+  "category": "Monitoring",
+  "description": "IBM Security Guardium Insights is a modern data security solution built to adapt to changing environments, connect to critical IT and security tools, streamline compliance and audit processes, and intelligently respond to data threats.",
+  "publisher": "Fortinet",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "help_online": "",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "name": "server_url",
+        "description": "URL of the IBM Security Guardium Insights server to which you will connect and perform automated operations.",
+        "type": "text",
+        "visible": true,
+        "editable": true,
+        "required": true
+      },
+      {
+        "title": "Encoded Token",
+        "name": "encoded_token",
+        "description": "Encoded Token which you get when you craete a new API Key in IBM Security Guardium Insights. For details: https://www.ibm.com/docs/en/guardium-insights/3.0.x?topic=administering-api-keys#settings_api",
+        "type": "password",
+        "visible": true,
+        "editable": true,
+        "required": true
+      },
+      {
+        "title": "Verify SSL",
+        "name": "verify_ssl",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "type": "checkbox",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "get_report_categories_list",
+      "description": "Retrieves the list of all the available report categories from IBM Security Guardium Insights based on the input parameters specified.",
+      "category": "investigation",
+      "annotation": "get_report_categories_list",
+      "title": "Get Report Categories List",
+      "parameters": [
+        {
+          "title": "Report ID",
+          "name": "report_id",
+          "description": "Specify the ID of report to retrieve its report category from the IBM Security Guardium Insights. You can get report ID from 'Get Reports List' action.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the ID of report to retrieve its report category from the IBM Security Guardium Insights. "
+        }
+      ],
+      "output_schema": {
+        "category_list": [
+          {
+            "category_description": "",
+            "category_id": "",
+            "category_name": ""
+          }
+        ]
+      },
+      "enabled": true
+    },
+    {
+      "operation": "get_reports_list",
+      "description": "Retrieves the list of all the reports from IBM Security Guardium Insights based on the input parameters specified.",
+      "category": "investigation",
+      "annotation": "get_reports_list",
+      "title": "Get Reports List",
+      "parameters": [
+        {
+          "title": "Category ID",
+          "name": "category_id",
+          "description": "Specify the category ID of report to retrieve from the IBM Security Guardium Insights. You can get category ID from 'Get Report Categories List' action.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the category ID of report to retrieve from the IBM Security Guardium Insights."
+        }
+      ],
+      "output_schema": {
+        "reports_list": [
+          {
+            "report_id": "",
+            "report_name": "",
+            "report_description": "",
+            "category_id": "",
+            "report_tags": [
+              {
+                "nls_key": "",
+                "nls_value": ""
+              }
+            ],
+            "headers": [
+              {
+                "header_id": "",
+                "header_name": "",
+                "header_description": {
+                  "nls_key": "",
+                  "nls_value": ""
+                },
+                "field_name": {
+                  "nls_key": "",
+                  "nls_value": ""
+                },
+                "sequence": "",
+                "table_name": ""
+              }
+            ],
+            "access_level": "",
+            "creator_user_name": ""
+          }
+        ],
+        "reports_tags": [
+          {
+            "nls_key": "",
+            "nls_value": ""
+          }
+        ]
+      },
+      "enabled": true
+    },
+    {
+      "operation": "get_policies_list",
+      "description": "Retrieves the list of all the policies from IBM Security Guardium Insights.",
+      "category": "investigation",
+      "annotation": "get_policies_list",
+      "title": "Get Policies List",
+      "parameters": [],
+      "output_schema": {
+        "policies": [
+          {
+            "activation_status": "",
+            "contains_rule_types": [],
+            "control_flow": "",
+            "installed_flag": "",
+            "installed_order": "",
+            "installed_timestamp": "",
+            "last_edited_timestamp": "",
+            "log_flat": "",
+            "no_of_rules": "",
+            "policy_id": "",
+            "policy_name": "",
+            "policy_type": "",
+            "rules_on_flat": "",
+            "template": "",
+            "ui_sequence": "",
+            "version": ""
+          }
+        ],
+        "status": {
+          "message": "",
+          "status": ""
+        }
+      },
+      "enabled": true
+    },
+    {
+      "operation": "get_policy_details",
+      "description": "Retrieves the details of the policy from IBM Security Guardium Insights based on the policy ID specified.",
+      "category": "investigation",
+      "annotation": "get_policy_details",
+      "title": "Get Policy Details",
+      "parameters": [
+        {
+          "title": "Policy ID",
+          "name": "policy_id",
+          "description": "Specify the policy ID to retrieve details of policy from the IBM Security Guardium Insights. You can get policy ID from 'Get Policies List' action.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the policy to retrieve details of policy from the IBM Security Guardium Insights."
+        }
+      ],
+      "output_schema": {
+        "activation_status": "",
+        "control_flow": "",
+        "installed_flag": "",
+        "policy_name": "",
+        "rules": [
+          {
+            "actions": [
+              {
+                "action_name": "",
+                "notifications": [
+                  {
+                    "integration_id": "",
+                    "template_id": "",
+                    "type": "",
+                    "value": ""
+                  }
+                ],
+                "order": "",
+                "parameters": [
+                  {
+                    "parameter_name": "",
+                    "parameter_value": ""
+                  }
+                ],
+                "qr_defintion_id": "",
+                "type": "",
+                "ui_label": ""
+              }
+            ],
+            "continue_to_next_rule": "",
+            "empty_groups": [],
+            "parameters": [
+              {
+                "parameter_name": "",
+                "parameter_operator": "",
+                "parameter_type": "",
+                "parameter_value": "",
+                "parameter_value_label": "",
+                "ui_label": ""
+              }
+            ],
+            "policy_id": "",
+            "rule_id": "",
+            "rule_name": "",
+            "rule_order": "",
+            "rule_type": "",
+            "severity": "",
+            "tags": [],
+            "template": ""
+          }
+        ],
+        "status": {
+          "message": "",
+          "status": ""
+        }
+      },
+      "enabled": true
+    },
+    {
+      "operation": "get_cases_list",
+      "description": "Retrieves the list of all the cases from IBM Security Guardium Insights based on the input parameters specified.",
+      "category": "investigation",
+      "annotation": "get_cases_list",
+      "title": "Get Cases List",
+      "parameters": [
+        {
+          "title": "Case ID",
+          "name": "case_id",
+          "description": "Specify the case ID to retrieve from the IBM Security Guardium Insights.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the case ID to retrieve from the IBM Security Guardium Insights."
+        },
+        {
+          "title": "Limit",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "limit",
+          "tooltip": "Specify the maximum number of cases that this operation should return.",
+          "description": "Specify the maximum number of cases that this operation should return."
+        },
+        {
+          "title": "Offset",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "offset",
+          "tooltip": "To skip the first n element based upon the value you specify in there",
+          "description": "Specify the count of the first few records to skip while retrieving response."
+        }
+      ],
+      "output_schema": {
+        "cases": [
+          {
+            "artifacts": [],
+            "assignments": [
+              {
+                "template_id": "",
+                "type": "",
+                "value": ""
+              }
+            ],
+            "case_id": "",
+            "comments": [
+              {
+                "what": "",
+                "when": "",
+                "who": ""
+              }
+            ],
+            "date_created": "",
+            "date_due": "",
+            "date_modified": "",
+            "description": "",
+            "full_access": "",
+            "origin": {
+              "date_next": "",
+              "date_start": "",
+              "description": "",
+              "frequency": "",
+              "name": "",
+              "scheduled_job_id": ""
+            },
+            "priority": "",
+            "status": "",
+            "tasks": [
+              {
+                "assignments": [
+                  {
+                    "template_id": "",
+                    "type": "",
+                    "value": ""
+                  }
+                ],
+                "case_id": "",
+                "comments": [
+                  {
+                    "what": "",
+                    "when": "",
+                    "who": ""
+                  }
+                ],
+                "date_created": "",
+                "date_due": "",
+                "date_modified": "",
+                "depends_on": [
+                  ""
+                ],
+                "description": "",
+                "priority": "",
+                "run": {
+                  "date_end": "",
+                  "date_start": "",
+                  "detail": "",
+                  "query_from": "",
+                  "query_to": "",
+                  "report_filters": {
+                    "brackets_id": "",
+                    "filter_name": "",
+                    "filters_array": [
+                      {
+                        "brackets": "",
+                        "condition": {
+                          "case_insensitive": "",
+                          "field_nls_translation_key": "",
+                          "filter_id": "",
+                          "header_id": "",
+                          "header_name": "",
+                          "header_type": "",
+                          "in_report_date_range": {
+                            "end_date": "",
+                            "end_number": "",
+                            "end_unit": "",
+                            "start_date": "",
+                            "start_number": "",
+                            "start_unit": "",
+                            "type": ""
+                          },
+                          "in_report_field_nls_key": "",
+                          "in_report_header_id": "",
+                          "in_report_header_name": "",
+                          "in_report_id": "",
+                          "in_report_name": "",
+                          "in_report_table_name": "",
+                          "operator_type": "",
+                          "parameter_type": "",
+                          "schema_name": "",
+                          "sequence": "",
+                          "table_name": "",
+                          "values": []
+                        }
+                      }
+                    ],
+                    "is_custom": "",
+                    "option_type": "",
+                    "sequence": ""
+                  },
+                  "report_id": "",
+                  "report_name": "",
+                  "report_result_file_name": "",
+                  "run_id": "",
+                  "scheduled_job_id": "",
+                  "scheduled_job_name": "",
+                  "scheduled_task_id": "",
+                  "scheduled_task_type": "",
+                  "status": ""
+                },
+                "status": "",
+                "task_id": "",
+                "title": ""
+              }
+            ],
+            "title": ""
+          }
+        ],
+        "filter": {
+          "assigned_to_me": "",
+          "assigned_to_my_roles": "",
+          "date_created": "",
+          "date_created_operator": "",
+          "date_due": "",
+          "date_due_operator": "",
+          "priority": "",
+          "priority_operator": "",
+          "scheduled_job_id": [],
+          "status": "",
+          "status_operator": ""
+        },
+        "status": {
+          "code": "",
+          "details": [
+            {
+              "type_url": "",
+              "value": ""
+            }
+          ],
+          "message": ""
+        }
+      },
+      "enabled": true
+    },
+    {
+      "operation": "get_tasks_list",
+      "description": "Retrieves the list of all the tasks from IBM Security Guardium Insights based on the input parameters specified.",
+      "category": "investigation",
+      "annotation": "get_tasks_list",
+      "title": "Get Tasks List",
+      "parameters": [
+        {
+          "title": "Case ID",
+          "name": "case_id",
+          "description": "Specify the case ID to retrieve all the tasks linked to it from the IBM Security Guardium Insights. You can get Case ID from 'Get Cases List' action",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the case ID to retrieve all the tasks linked to it from the IBM Security Guardium Insights."
+        },
+        {
+          "title": "Task ID",
+          "name": "task_id",
+          "description": "Specify the task ID to retrieve from the IBM Security Guardium Insights.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the task ID to retrieve from the IBM Security Guardium Insights."
+        }
+      ],
+      "output_schema": {
+        "status": {
+          "code": "",
+          "details": [
+            {
+              "type_url": "",
+              "value": ""
+            }
+          ],
+          "message": ""
+        },
+        "tasks": [
+          {
+            "assignments": [
+              {
+                "template_id": "",
+                "type": "",
+                "value": ""
+              }
+            ],
+            "case_id": "",
+            "comments": [
+              {
+                "what": "",
+                "when": "",
+                "who": ""
+              }
+            ],
+            "date_created": "",
+            "date_due": "",
+            "date_modified": "",
+            "depends_on": [
+              ""
+            ],
+            "description": "",
+            "priority": "",
+            "run": {
+              "date_end": "",
+              "date_start": "",
+              "detail": "",
+              "query_from": "",
+              "query_to": "",
+              "report_filters": {
+                "brackets_id": "",
+                "filter_name": "",
+                "filters_array": [
+                  {
+                    "brackets": "",
+                    "condition": {
+                      "case_insensitive": "",
+                      "field_nls_translation_key": "",
+                      "filter_id": "",
+                      "header_id": "",
+                      "header_name": "",
+                      "header_type": "",
+                      "in_report_date_range": {
+                        "end_date": "",
+                        "end_number": "",
+                        "end_unit": "",
+                        "start_date": "",
+                        "start_number": "",
+                        "start_unit": "",
+                        "type": ""
+                      },
+                      "in_report_field_nls_key": "",
+                      "in_report_header_id": "",
+                      "in_report_header_name": "",
+                      "in_report_id": "",
+                      "in_report_name": "",
+                      "in_report_table_name": "",
+                      "operator_type": "",
+                      "parameter_type": "",
+                      "schema_name": "",
+                      "sequence": "",
+                      "table_name": "",
+                      "values": []
+                    }
+                  }
+                ],
+                "is_custom": "",
+                "option_type": "",
+                "sequence": ""
+              },
+              "report_id": "",
+              "report_name": "",
+              "report_result_file_name": "",
+              "run_id": "",
+              "scheduled_job_id": "",
+              "scheduled_job_name": "",
+              "scheduled_task_id": "",
+              "scheduled_task_type": "",
+              "status": ""
+            },
+            "status": "",
+            "task_id": "",
+            "title": ""
+          }
+        ]
+      },
+      "enabled": true
+    },
+    {
+      "operation": "get_groups_list",
+      "description": "Retrieves the list of all the groups from IBM Security Guardium Insights.",
+      "category": "investigation",
+      "annotation": "get_groups_list",
+      "title": "Get Groups List",
+      "parameters": [],
+      "output_schema": {
+        "groups": [
+          {
+            "access_level": "",
+            "description": "",
+            "flattened_member_count": "",
+            "group_id": "",
+            "group_type_id": "",
+            "last_sync_date": "",
+            "ldap_config": {
+              "attributes": [],
+              "bind_group_id": "",
+              "bind_password": "",
+              "clear_group": "",
+              "filter": "",
+              "filter_scope": "",
+              "import_limit": "",
+              "ldap_id": "",
+              "member_prefix": ""
+            },
+            "member_count": "",
+            "members": [
+              {
+                "member_id": "",
+                "name": ""
+              }
+            ],
+            "name": "",
+            "nested": "",
+            "nested_group_members": [
+              {
+                "group_id": "",
+                "name": "",
+                "nested_member_id": ""
+              }
+            ],
+            "next_sync_date": "",
+            "sync_inactive_code": "",
+            "sync_source": "",
+            "synced": "",
+            "tuple_count": "",
+            "tuple_params": []
+          }
+        ],
+        "status": {
+          "message": "",
+          "status": ""
+        }
+      },
+      "enabled": true
+    },
+    {
+      "operation": "get_group_members_list",
+      "description": "Retrieves the list of all the members of the group from IBM Security Guardium Insights based on the group ID specified.",
+      "category": "investigation",
+      "annotation": "get_group_members_list",
+      "title": "Get Group Members List",
+      "parameters": [
+        {
+          "title": "Group ID",
+          "name": "group_id",
+          "description": "Specify the group ID or comma-separated group IDs to retrieve group members from the IBM Security Guardium Insights. You can get group ID from 'Get groups List' action.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the group ID or comma-separated group IDs to retrieve group members from the IBM Security Guardium Insights."
+        }
+      ],
+      "output_schema": {
+        "groups": [
+          {
+            "access_level": "",
+            "description": "",
+            "flattened_member_count": "",
+            "group_id": "",
+            "group_type_id": "",
+            "last_sync_date": "",
+            "ldap_config": {
+              "attributes": [],
+              "bind_group_id": "",
+              "bind_password": "",
+              "clear_group": "",
+              "filter": "",
+              "filter_scope": "",
+              "import_limit": "",
+              "ldap_id": "",
+              "member_prefix": ""
+            },
+            "member_count": "",
+            "members": [
+              {
+                "member_id": "",
+                "name": ""
+              }
+            ],
+            "name": "",
+            "nested": "",
+            "nested_group_members": [
+              {
+                "group_id": "",
+                "name": "",
+                "nested_member_id": ""
+              }
+            ],
+            "next_sync_date": "",
+            "sync_inactive_code": "",
+            "sync_source": "",
+            "synced": "",
+            "tuple_count": "",
+            "tuple_params": []
+          }
+        ],
+        "status": {
+          "message": "",
+          "status": ""
+        }
+      },
+      "enabled": true
+    },
+    {
+      "operation": "get_compliance_data",
+      "description": "Retrieves the compliance data from IBM Security Guardium Insights.",
+      "category": "investigation",
+      "annotation": "get_compliance_data",
+      "title": "Get Compliance Data",
+      "parameters": [],
+      "output_schema": {
+        "compliance_info": [
+          {
+            "milestones": {
+              "audit_info": {
+                "additionalProp1": {
+                  "description": "",
+                  "enabled": "",
+                  "id": "",
+                  "instructions": "",
+                  "is_deletion": "",
+                  "name": "",
+                  "owner": {
+                    "integration_id": "",
+                    "template_id": "",
+                    "type": "",
+                    "value": ""
+                  },
+                  "recipients": [
+                    {
+                      "integration_id": "",
+                      "template_id": "",
+                      "type": "",
+                      "value": ""
+                    }
+                  ],
+                  "report_key": "",
+                  "run_once_now": "",
+                  "scheduler": {
+                    "begin_schedule": "",
+                    "by_day_of_month": "",
+                    "day_of_month": "",
+                    "day_of_week": [],
+                    "day_order": "",
+                    "day_order_day_of_week": "",
+                    "end_schedule": "",
+                    "frequency": "",
+                    "months": [],
+                    "never_end": "",
+                    "repeat": "",
+                    "repeat_begin": {
+                      "hour": "",
+                      "minute": "",
+                      "timezone": ""
+                    },
+                    "repeat_end": {
+                      "hour": "",
+                      "minute": "",
+                      "timezone": ""
+                    }
+                  },
+                  "tasks": [
+                    {
+                      "delivery_method": {
+                        "file_format": "",
+                        "report_time_zone": ""
+                      },
+                      "distribution_rule_ids": [
+                        ""
+                      ],
+                      "email_subject": "",
+                      "instructions": "",
+                      "name": "",
+                      "parameter": {
+                        "data_import_parameter": {
+                          "integration_id": "",
+                          "template_id": "",
+                          "value": ""
+                        },
+                        "report_parameter": {
+                          "report_id": "",
+                          "report_name": "",
+                          "runtime_parameters": [
+                            {
+                              "key": "",
+                              "label": "",
+                              "operator_type": "",
+                              "runtime_parameter_type": "",
+                              "runtime_parameter_type_length": "",
+                              "value": ""
+                            }
+                          ],
+                          "sync_execution_date": ""
+                        }
+                      },
+                      "recipients": [
+                        {
+                          "integration_id": "",
+                          "template_id": "",
+                          "type": "",
+                          "value": ""
+                        }
+                      ],
+                      "report_filters": {
+                        "brackets_id": "",
+                        "filter_name": "",
+                        "filters_array": [
+                          {
+                            "brackets": "",
+                            "condition": {
+                              "case_insensitive": "",
+                              "field_nls_translation_key": "",
+                              "filter_id": "",
+                              "header_id": "",
+                              "header_name": "",
+                              "header_type": "",
+                              "in_report_date_range": {
+                                "end_date": "",
+                                "end_number": "",
+                                "end_unit": "",
+                                "start_date": "",
+                                "start_number": "",
+                                "start_unit": "",
+                                "type": ""
+                              },
+                              "in_report_field_nls_key": "",
+                              "in_report_header_id": "",
+                              "in_report_header_name": "",
+                              "in_report_id": "",
+                              "in_report_name": "",
+                              "in_report_table_name": "",
+                              "operator_type": "",
+                              "parameter_type": "",
+                              "schema_name": "",
+                              "sequence": "",
+                              "table_name": "",
+                              "values": []
+                            }
+                          }
+                        ],
+                        "is_custom": "",
+                        "option_type": "",
+                        "sequence": ""
+                      },
+                      "scheduled_task_id": "",
+                      "type": ""
+                    }
+                  ]
+                }
+              },
+              "email_config": {
+                "integration_id": "",
+                "template_id": ""
+              },
+              "policy_id": "",
+              "rules": {
+                "additionalProp1": {
+                  "actions": {
+                    "additionalProp1": {
+                      "notification_type": "",
+                      "user_ids": []
+                    },
+                    "additionalProp2": {
+                      "notification_type": "",
+                      "user_ids": []
+                    },
+                    "additionalProp3": {
+                      "notification_type": "",
+                      "user_ids": []
+                    }
+                  },
+                  "rule_id": ""
+                }
+              },
+              "syslog_config": {
+                "host": "",
+                "include_q_radar": "",
+                "is_deletion": "",
+                "name": "",
+                "port": "",
+                "protocol": "",
+                "syslog_id": "",
+                "template_id": ""
+              },
+              "users": [
+                {
+                  "directory_id": "",
+                  "display_name": "",
+                  "distinguished_name": "",
+                  "roles": [],
+                  "uid": "",
+                  "user_id": ""
+                }
+              ]
+            },
+            "questionnaire": {
+              "createWorkSpace": "",
+              "dashboards": [
+                {
+                  "ID": "",
+                  "Type": ""
+                }
+              ],
+              "data_sources": [
+                {
+                  "name": "",
+                  "used": ""
+                }
+              ],
+              "groups": {
+                "additionalProp1": {
+                  "group_type_id": "",
+                  "id": "",
+                  "members": [
+                    {
+                      "member_id": "",
+                      "name": ""
+                    }
+                  ],
+                  "members_to_add": [],
+                  "members_to_delete": [
+                    {
+                      "member_id": "",
+                      "name": ""
+                    }
+                  ],
+                  "name": ""
+                },
+                "additionalProp2": {
+                  "group_type_id": "",
+                  "id": "",
+                  "members": [
+                    {
+                      "member_id": "",
+                      "name": ""
+                    }
+                  ],
+                  "members_to_add": [],
+                  "members_to_delete": [
+                    {
+                      "member_id": "",
+                      "name": ""
+                    }
+                  ],
+                  "name": ""
+                },
+                "additionalProp3": {
+                  "group_type_id": "",
+                  "id": "",
+                  "members": [
+                    {
+                      "member_id": "",
+                      "name": ""
+                    }
+                  ],
+                  "members_to_add": [],
+                  "members_to_delete": [
+                    {
+                      "member_id": "",
+                      "name": ""
+                    }
+                  ],
+                  "name": ""
+                }
+              },
+              "groups_selected": [],
+              "regulation": "",
+              "reports_map": {
+                "additionalProp1": {
+                  "reports": [
+                    {
+                      "description": "",
+                      "groups_needed": [
+                        {
+                          "group_type_id": "",
+                          "id": "",
+                          "members": [
+                            {
+                              "member_id": "",
+                              "name": ""
+                            }
+                          ],
+                          "members_to_add": [],
+                          "members_to_delete": [
+                            {
+                              "member_id": "",
+                              "name": ""
+                            }
+                          ],
+                          "name": ""
+                        }
+                      ],
+                      "groups_present": [
+                        {
+                          "group_type_id": "",
+                          "id": "",
+                          "members": [
+                            {
+                              "member_id": "",
+                              "name": ""
+                            }
+                          ],
+                          "members_to_add": [],
+                          "members_to_delete": [
+                            {
+                              "member_id": "",
+                              "name": ""
+                            }
+                          ],
+                          "name": ""
+                        }
+                      ],
+                      "report_id": "",
+                      "report_tags": [
+                        {
+                          "nls_key": "",
+                          "nls_value": ""
+                        }
+                      ],
+                      "status": "",
+                      "title": ""
+                    }
+                  ]
+                }
+              }
+            },
+            "tasks": {
+              "additionalProp1": ""
+            },
+            "users": [
+              {
+                "directory_id": "",
+                "display_name": "",
+                "distinguished_name": "",
+                "roles": [
+                  ""
+                ],
+                "uid": "",
+                "user_id": ""
+              }
+            ],
+            "workspace_id": ""
+          }
+        ],
+        "status": {
+          "message": "",
+          "status": ""
+        }
+      },
+      "enabled": true
+    },
+    {
+      "operation": "get_connections_list",
+      "description": "Retrieves the list of all the connections accounts from IBM Security Guardium Insights based on the input parameters specified.",
+      "category": "investigation",
+      "annotation": "get_connections_list",
+      "title": "Get Connections List",
+      "parameters": [
+        {
+          "title": "Account ID",
+          "name": "account_id",
+          "description": "Specify the account ID to retrieve connection account from the IBM Security Guardium Insights.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the account ID to retrieve connection account from the IBM Security Guardium Insights."
+        },
+        {
+          "title": "Account Access Key",
+          "name": "access_key",
+          "description": "Specify the account access key to retrieve connection account from the IBM Security Guardium Insights.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the account access key to retrieve connection account from the IBM Security Guardium Insights."
+        }
+      ],
+      "output_schema": {
+        "account_configs": [
+          {
+            "account": {
+              "access_key": "",
+              "authentication_type": "",
+              "connection_type": "",
+              "name": "",
+              "role_arn": "",
+              "secret_access_key": ""
+            },
+            "account_id": ""
+          }
+        ]
+      },
+      "enabled": true
+    },
+    {
+      "operation": "get_datasets_list",
+      "description": "Retrieves the list of all the datasets from IBM Security Guardium Insights based on the input parameters specified.",
+      "category": "investigation",
+      "annotation": "get_datasets_list",
+      "title": "Get Datasets List",
+      "parameters": [
+        {
+          "title": "Start Time",
+          "name": "filter.start_time",
+          "description": "Specify the datetime to retrieve datasets created at this time or later from the IBM Security Guardium Insights.",
+          "type": "datetime",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the datetime to retrieve datasets created at this time or later from the IBM Security Guardium Insights."
+        },
+        {
+          "title": "End Time",
+          "name": "filter.end_time",
+          "description": "Specify the datetime to retrieve datasets created before this time from the IBM Security Guardium Insights.",
+          "type": "datetime",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the datetime to retrieve datasets created before this time from the IBM Security Guardium Insights."
+        },
+        {
+          "title": "Limit",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "limit",
+          "tooltip": "Specify the maximum number of datasets that this operation should return.",
+          "description": "Specify the maximum number of datasets that this operation should return."
+        },
+        {
+          "title": "Offset",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "offset",
+          "tooltip": "To skip the first n element based upon the value you specify in there",
+          "description": "Specify the count of the first few records to skip while retrieving response."
+        }
+      ],
+      "output_schema": {
+        "filters": [
+          {
+            "filters": [
+              {
+                "count": "",
+                "value": ""
+              }
+            ],
+            "name": ""
+          }
+        ],
+        "record_count": "",
+        "records": [
+          {
+            "creation_time": "",
+            "data_count": "",
+            "dataset_name": "",
+            "editable": "",
+            "last_updated": ""
+          }
+        ]
+      },
+      "enabled": true
+    },
+    {
+      "operation": "get_dataset_data",
+      "description": "Retrieves the data report of specified dataset from IBM Security Guardium Insights.",
+      "category": "investigation",
+      "annotation": "get_dataset_data",
+      "title": "Get Dataset Data",
+      "parameters": [
+        {
+          "title": "Dataset Name",
+          "name": "dataset_name",
+          "description": "Specify the name of the dataset to retrieve its data report from the IBM Security Guardium Insights.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the name of the dataset to retrieve its data report from the IBM Security Guardium Insights."
+        },
+        {
+          "title": "Limit",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "limit",
+          "tooltip": "Specify the maximum number of records that this operation should return.",
+          "description": "Specify the maximum number of records that this operation should return."
+        },
+        {
+          "title": "Offset",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "offset",
+          "tooltip": "To skip the first n element based upon the value you specify in there",
+          "description": "Specify the count of the first few records to skip while retrieving response."
+        }
+      ],
+      "output_schema": {
+        "record_count": "",
+        "report_result": {
+          "headers": [
+            {
+              "header": "",
+              "key": ""
+            }
+          ],
+          "rows": [
+            {
+              "row": {
+                "additionalProp1": ""
+              }
+            }
+          ]
+        }
+      },
+      "enabled": true
+    },
+    {
+      "operation": "get_notifications_list",
+      "description": "Retrieves the list of all the notifications from IBM Security Guardium Insights based on the input parameters specified.",
+      "category": "investigation",
+      "annotation": "get_notifications_list",
+      "title": "Get Notifications List",
+      "parameters": [
+        {
+          "title": "Start Time",
+          "name": "filter.start_time",
+          "description": "Specify the datetime to retrieve notifications created at this time or later from the IBM Security Guardium Insights.",
+          "type": "datetime",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the datetime to retrieve notifications created at this time or later from the IBM Security Guardium Insights."
+        },
+        {
+          "title": "End Time",
+          "name": "filter.end_time",
+          "description": "Specify the datetime to retrieve notifications created before this time from the IBM Security Guardium Insights.",
+          "type": "datetime",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the datetime to retrieve notifications created before this time from the IBM Security Guardium Insights."
+        },
+        {
+          "title": "State",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "select",
+          "options": [
+            "INCLUDE_ALL",
+            "UNREAD_ONLY",
+            "READ_ONLY",
+            "COMPLETE_ONLY",
+            "NOT_COMPLETE"
+          ],
+          "name": "filter.state",
+          "tooltip": "Specify the state of notifications to retrieve from the IBM Security Guardium Insights.",
+          "description": "Specify the state of notifications to retrieve from the IBM Security Guardium Insights."
+        },
+        {
+          "title": "Limit",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "limit",
+          "tooltip": "Specify the maximum number of notifications that this operation should return.",
+          "description": "Specify the maximum number of notifications that this operation should return."
+        },
+        {
+          "title": "Offset",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "offset",
+          "tooltip": "To skip the first n element based upon the value you specify in there",
+          "description": "Specify the count of the first few records to skip while retrieving response."
+        }
+      ],
+      "output_schema": {
+        "filters": [
+          {
+            "filters": [
+              {
+                "count": "",
+                "value": ""
+              }
+            ],
+            "name": ""
+          }
+        ],
+        "record_count": "",
+        "records": [
+          {
+            "creation_time": "",
+            "event_end_time": "",
+            "event_start_time": "",
+            "href": "",
+            "id": "",
+            "origin": "",
+            "origin_data": "",
+            "severity": "",
+            "state": "",
+            "style": "",
+            "tenant_id": "",
+            "text": "",
+            "title": "",
+            "transaction_id": "",
+            "type": "",
+            "user_id": ""
+          }
+        ],
+        "status": {
+          "code": "",
+          "details": [
+            {
+              "type_url": "",
+              "value": ""
+            }
+          ],
+          "message": ""
+        }
+      },
+      "enabled": true
+    },
+    {
+      "operation": "get_schedules_list",
+      "description": "Retrieves the list of all the scheduled jobs and the linked tasks from IBM Security Guardium Insights based on the input parameters specified.",
+      "category": "investigation",
+      "annotation": "get_schedules_list",
+      "title": "Get Schedules List",
+      "parameters": [
+        {
+          "title": "Limit",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "limit",
+          "tooltip": "Specify the maximum number of records that this operation should return.",
+          "description": "Specify the maximum number of records that this operation should return."
+        },
+        {
+          "title": "Offset",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "type": "integer",
+          "name": "offset",
+          "tooltip": "To skip the first n element based upon the value you specify in there",
+          "description": "Specify the count of the first few records to skip while retrieving response."
+        }
+      ],
+      "output_schema": {
+        "record_count": "",
+        "report_names": [
+          {
+            "report_name": []
+          }
+        ],
+        "scheduled_job": [
+          {
+            "creation_time": "",
+            "description": "",
+            "enabled": "",
+            "expired": "",
+            "frequency": "",
+            "internal_audit": "",
+            "last_modified_time": "",
+            "last_run_duration": "",
+            "last_run_start": "",
+            "name": "",
+            "next_run": "",
+            "recipient": {
+              "integration_id": "",
+              "template_id": "",
+              "type": "",
+              "value": ""
+            },
+            "report_names": [],
+            "schedule_id": "",
+            "tags": []
+          }
+        ]
+      },
+      "enabled": true
+    },
+    {
+      "operation": "get_scheduled_job_details",
+      "description": "Retrieves the details of the scheduled job from IBM Security Guardium Insights based on the schedule ID specified.",
+      "category": "investigation",
+      "annotation": "get_scheduled_job_details",
+      "title": "Get Scheduled Job Details",
+      "parameters": [
+        {
+          "title": "Schedule ID",
+          "name": "schedule_id",
+          "description": "Specify the schedule ID to retrieve details of scheduled job from the IBM Security Guardium Insights. You can get schedule ID from 'Get Schedules List' action.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the schedule ID to retrieve details of scheduled job from the IBM Security Guardium Insights."
+        }
+      ],
+      "output_schema": {
+        "scheduled_job": {
+          "creation_time": "",
+          "description": "",
+          "enabled": "",
+          "expired": "",
+          "instructions": "",
+          "internal_audit": "",
+          "last_modified_time": "",
+          "name": "",
+          "next_run": "",
+          "origin": "",
+          "previous_run": "",
+          "recipient": {
+            "integration_id": "",
+            "template_id": "",
+            "type": "",
+            "value": ""
+          },
+          "retention": {
+            "archive": "",
+            "days": ""
+          },
+          "schedule_id": "",
+          "scheduler": {
+            "begin_schedule": "",
+            "by_day_of_month": "",
+            "day_of_month": "",
+            "day_of_week": [],
+            "day_order": "",
+            "day_order_day_of_week": "",
+            "end_schedule": "",
+            "frequency": "",
+            "months": [],
+            "never_end": "",
+            "repeat": "",
+            "repeat_begin": {
+              "hour": "",
+              "minute": "",
+              "timezone": ""
+            },
+            "repeat_end": {
+              "hour": "",
+              "minute": "",
+              "timezone": ""
+            },
+            "repeat_minutes": "",
+            "run_once_now": ""
+          },
+          "tags": [],
+          "tasks": [
+            {
+              "delivery_method": {
+                "file_format": "",
+                "report_time_zone": ""
+              },
+              "distribution_rule_ids": [],
+              "email_subject": "",
+              "instructions": "",
+              "name": "",
+              "parameter": {
+                "data_import_parameter": {
+                  "integration_id": "",
+                  "template_id": "",
+                  "value": ""
+                },
+                "report_parameter": {
+                  "report_id": "",
+                  "report_name": "",
+                  "runtime_parameters": [
+                    {
+                      "key": "",
+                      "label": "",
+                      "operator_type": "",
+                      "runtime_parameter_type": "",
+                      "runtime_parameter_type_length": "",
+                      "value": ""
+                    }
+                  ],
+                  "sync_execution_date": ""
+                }
+              },
+              "recipients": [
+                {
+                  "integration_id": "",
+                  "template_id": "",
+                  "type": "",
+                  "value": ""
+                }
+              ],
+              "report_filters": {
+                "brackets_id": "",
+                "filter_name": "",
+                "filters_array": [
+                  {
+                    "brackets": "",
+                    "condition": {
+                      "case_insensitive": "",
+                      "field_nls_translation_key": "",
+                      "filter_id": "",
+                      "header_id": "",
+                      "header_name": "",
+                      "header_type": "",
+                      "in_report_date_range": {
+                        "end_date": "",
+                        "end_number": "",
+                        "end_unit": "",
+                        "start_date": "",
+                        "start_number": "",
+                        "start_unit": "",
+                        "type": ""
+                      },
+                      "in_report_field_nls_key": "",
+                      "in_report_header_id": "",
+                      "in_report_header_name": "",
+                      "in_report_id": "",
+                      "in_report_name": "",
+                      "in_report_table_name": "",
+                      "operator_type": "",
+                      "parameter_type": "",
+                      "schema_name": "",
+                      "sequence": "",
+                      "table_name": "",
+                      "values": []
+                    }
+                  }
+                ],
+                "is_custom": "",
+                "option_type": "",
+                "sequence": ""
+              },
+              "scheduled_task_id": "",
+              "type": ""
+            }
+          ]
+        }
+      },
+      "enabled": true
+    }
+  ]
+}

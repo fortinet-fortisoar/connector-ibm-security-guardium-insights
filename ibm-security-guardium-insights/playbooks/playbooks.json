@@ -1,0 +1,1174 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "a817b0a6-650f-4f97-9fe8-e6fd65719b86",
+      "@type": "WorkflowCollection",
+      "name": "Sample - IBM Security Guardium Insights - 1.0.0",
+      "description": "IBM Security Guardium Insights is a modern data security solution built to adapt to changing environments, connect to critical IT and security tools, streamline compliance and audit processes, and intelligently respond to data threats.",
+      "visible": true,
+      "image": null,
+      "recordTags": [
+        "IBM",
+        "ibm-security-guardium-insights"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "1f9e3e53-6505-4df6-9bde-bbf1fa836a6f",
+          "collection": "/api/3/workflow_collections/a817b0a6-650f-4f97-9fe8-e6fd65719b86",
+          "triggerLimit": null,
+          "description": "Retrieves the list of all the available report categories from IBM Security Guardium Insights based on the input parameters specified.",
+          "name": "Get Report Categories List",
+          "tag": "#IBM Security Guardium Insights",
+          "recordTags": [
+            "IBM",
+            "ibm-security-guardium-insights"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/6b35ad4b-c3fd-4edc-a6d5-2a27e55282d5",
+          "steps": [
+            {
+              "uuid": "6b35ad4b-c3fd-4edc-a6d5-2a27e55282d5",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "7f141696-786d-4803-9139-c90dfa166676",
+                "title": "IBM Security Guardium Insights: Get Report Categories List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "d51ab5c4-9099-4869-b71f-ec7e022b1221",
+              "@type": "WorkflowStep",
+              "name": "Get Report Categories List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "IBM Security Guardium Insights",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "ibm-security-guardium-insights",
+                "operation": "get_report_categories_list",
+                "operationTitle": "Get Report Categories List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "9626f79c-6c9a-4baf-b157-068b1441fdf5",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Report Categories List",
+              "sourceStep": "/api/3/workflow_steps/6b35ad4b-c3fd-4edc-a6d5-2a27e55282d5",
+              "targetStep": "/api/3/workflow_steps/d51ab5c4-9099-4869-b71f-ec7e022b1221"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "67c9ad23-22f5-443d-ab23-f51a23affeb0",
+          "collection": "/api/3/workflow_collections/a817b0a6-650f-4f97-9fe8-e6fd65719b86",
+          "triggerLimit": null,
+          "description": "Retrieves the list of all the reports from IBM Security Guardium Insights based on the input parameters specified.",
+          "name": "Get Reports List",
+          "tag": "#IBM Security Guardium Insights",
+          "recordTags": [
+            "IBM",
+            "ibm-security-guardium-insights"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/2c68fa54-e6b1-458a-ae21-a2925793f981",
+          "steps": [
+            {
+              "uuid": "2c68fa54-e6b1-458a-ae21-a2925793f981",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "29e5add5-f00d-4878-8b14-7d2a5d977b84",
+                "title": "IBM Security Guardium Insights: Get Reports List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "cc19397b-5ba4-47ba-92a3-2eeb1374a5a8",
+              "@type": "WorkflowStep",
+              "name": "Get Reports List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "IBM Security Guardium Insights",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "ibm-security-guardium-insights",
+                "operation": "get_reports_list",
+                "operationTitle": "Get Reports List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "c1eee3d7-890f-483e-bbba-6b51692bc341",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Reports List",
+              "sourceStep": "/api/3/workflow_steps/2c68fa54-e6b1-458a-ae21-a2925793f981",
+              "targetStep": "/api/3/workflow_steps/cc19397b-5ba4-47ba-92a3-2eeb1374a5a8"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "8e4fcc96-8508-4a97-bfb7-dca56353e904",
+          "collection": "/api/3/workflow_collections/a817b0a6-650f-4f97-9fe8-e6fd65719b86",
+          "triggerLimit": null,
+          "description": "Retrieves the list of all the policies from IBM Security Guardium Insights.",
+          "name": "Get Policies List",
+          "tag": "#IBM Security Guardium Insights",
+          "recordTags": [
+            "IBM",
+            "ibm-security-guardium-insights"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/08a5a4c6-95da-4292-9568-2ce564fab83e",
+          "steps": [
+            {
+              "uuid": "08a5a4c6-95da-4292-9568-2ce564fab83e",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "487fa5e2-b7e5-45e4-bfff-a61a2132d3fc",
+                "title": "IBM Security Guardium Insights: Get Policies List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "dcf81b04-4d5e-4558-a8fa-021b2961d529",
+              "@type": "WorkflowStep",
+              "name": "Get Policies List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "IBM Security Guardium Insights",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "ibm-security-guardium-insights",
+                "operation": "get_policies_list",
+                "operationTitle": "Get Policies List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "b5d688ac-05e0-46ca-8a44-67527a9da79a",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Policies List",
+              "sourceStep": "/api/3/workflow_steps/08a5a4c6-95da-4292-9568-2ce564fab83e",
+              "targetStep": "/api/3/workflow_steps/dcf81b04-4d5e-4558-a8fa-021b2961d529"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "87f79926-09e4-4b81-96aa-312f3b52929a",
+          "collection": "/api/3/workflow_collections/a817b0a6-650f-4f97-9fe8-e6fd65719b86",
+          "triggerLimit": null,
+          "description": "Retrieves the details of the policy from IBM Security Guardium Insights based on the policy ID specified.",
+          "name": "Get Policy Details",
+          "tag": "#IBM Security Guardium Insights",
+          "recordTags": [
+            "IBM",
+            "ibm-security-guardium-insights"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/dc330674-9899-401e-9a0c-2cf463dccd54",
+          "steps": [
+            {
+              "uuid": "dc330674-9899-401e-9a0c-2cf463dccd54",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "147304e5-1be0-4924-b135-55cbd58f356a",
+                "title": "IBM Security Guardium Insights: Get Policy Details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "ec7cfa80-b137-4def-90e1-c2ce9fda9296",
+              "@type": "WorkflowStep",
+              "name": "Get Policy Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "IBM Security Guardium Insights",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "ibm-security-guardium-insights",
+                "operation": "get_policy_details",
+                "operationTitle": "Get Policy Details"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "8fa27d2c-7dd9-4824-940f-54c8e9110a0c",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Policy Details",
+              "sourceStep": "/api/3/workflow_steps/dc330674-9899-401e-9a0c-2cf463dccd54",
+              "targetStep": "/api/3/workflow_steps/ec7cfa80-b137-4def-90e1-c2ce9fda9296"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "c9b108a6-bfbb-4b41-a903-1da3db3b656c",
+          "collection": "/api/3/workflow_collections/a817b0a6-650f-4f97-9fe8-e6fd65719b86",
+          "triggerLimit": null,
+          "description": "Retrieves the list of all the cases from IBM Security Guardium Insights based on the input parameters specified.",
+          "name": "Get Cases List",
+          "tag": "#IBM Security Guardium Insights",
+          "recordTags": [
+            "IBM",
+            "ibm-security-guardium-insights"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/6e15b5e9-a7a5-44fc-84be-f28ed9600da9",
+          "steps": [
+            {
+              "uuid": "6e15b5e9-a7a5-44fc-84be-f28ed9600da9",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "8455da79-ca01-482b-8143-b98b3760ace6",
+                "title": "IBM Security Guardium Insights: Get Cases List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "a0da13c5-3ba5-462c-a4d9-6c37f4f90685",
+              "@type": "WorkflowStep",
+              "name": "Get Cases List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "IBM Security Guardium Insights",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "ibm-security-guardium-insights",
+                "operation": "get_cases_list",
+                "operationTitle": "Get Cases List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "f2281f9d-8ffd-4aa1-b36b-6c77bb739ae8",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Cases List",
+              "sourceStep": "/api/3/workflow_steps/6e15b5e9-a7a5-44fc-84be-f28ed9600da9",
+              "targetStep": "/api/3/workflow_steps/a0da13c5-3ba5-462c-a4d9-6c37f4f90685"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "9d12c7a2-c476-47a6-a4d4-5c68b9f58917",
+          "collection": "/api/3/workflow_collections/a817b0a6-650f-4f97-9fe8-e6fd65719b86",
+          "triggerLimit": null,
+          "description": "Retrieves the list of all the tasks from IBM Security Guardium Insights based on the input parameters specified.",
+          "name": "Get Tasks List",
+          "tag": "#IBM Security Guardium Insights",
+          "recordTags": [
+            "IBM",
+            "ibm-security-guardium-insights"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/c94785f1-9485-4c8e-aa59-2999c868bdcd",
+          "steps": [
+            {
+              "uuid": "c94785f1-9485-4c8e-aa59-2999c868bdcd",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "6e95ec4a-aaeb-464b-a771-e615dfda9418",
+                "title": "IBM Security Guardium Insights: Get Tasks List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "055932f7-7b56-462d-bf7c-0aa50feb8b06",
+              "@type": "WorkflowStep",
+              "name": "Get Tasks List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "IBM Security Guardium Insights",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "ibm-security-guardium-insights",
+                "operation": "get_tasks_list",
+                "operationTitle": "Get Tasks List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "28f646d2-b5d9-4ac6-9720-3c84808d9aa9",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Tasks List",
+              "sourceStep": "/api/3/workflow_steps/c94785f1-9485-4c8e-aa59-2999c868bdcd",
+              "targetStep": "/api/3/workflow_steps/055932f7-7b56-462d-bf7c-0aa50feb8b06"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "6dafcfca-4c86-4bf3-98f3-8c960e95898a",
+          "collection": "/api/3/workflow_collections/a817b0a6-650f-4f97-9fe8-e6fd65719b86",
+          "triggerLimit": null,
+          "description": "Retrieves the list of all the groups from IBM Security Guardium Insights.",
+          "name": "Get Groups List",
+          "tag": "#IBM Security Guardium Insights",
+          "recordTags": [
+            "IBM",
+            "ibm-security-guardium-insights"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/faeb0b83-332c-4799-b24b-b807f970e20e",
+          "steps": [
+            {
+              "uuid": "faeb0b83-332c-4799-b24b-b807f970e20e",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "be68de9a-7b69-4635-be26-3545ae204294",
+                "title": "IBM Security Guardium Insights: Get Groups List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "cdafc2af-c370-4405-bbc9-0ff3bda85b05",
+              "@type": "WorkflowStep",
+              "name": "Get Groups List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "IBM Security Guardium Insights",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "ibm-security-guardium-insights",
+                "operation": "get_groups_list",
+                "operationTitle": "Get Groups List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "13b8711d-008b-42f4-89ab-85d829b09d61",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Groups List",
+              "sourceStep": "/api/3/workflow_steps/faeb0b83-332c-4799-b24b-b807f970e20e",
+              "targetStep": "/api/3/workflow_steps/cdafc2af-c370-4405-bbc9-0ff3bda85b05"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "3725aff0-d9b2-497f-a35b-d6ca0559c41c",
+          "collection": "/api/3/workflow_collections/a817b0a6-650f-4f97-9fe8-e6fd65719b86",
+          "triggerLimit": null,
+          "description": "Retrieves the list of all the members of the group from IBM Security Guardium Insights based on the group ID specified.",
+          "name": "Get Group Members List",
+          "tag": "#IBM Security Guardium Insights",
+          "recordTags": [
+            "IBM",
+            "ibm-security-guardium-insights"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/ba90eddd-d683-4328-bb19-3eb08f3ee318",
+          "steps": [
+            {
+              "uuid": "ba90eddd-d683-4328-bb19-3eb08f3ee318",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "07310375-18f4-444f-a4bd-11bc8b373c85",
+                "title": "IBM Security Guardium Insights: Get Group Members List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "18c07ce1-a71d-4155-9829-c815aa14f40b",
+              "@type": "WorkflowStep",
+              "name": "Get Group Members List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "IBM Security Guardium Insights",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "ibm-security-guardium-insights",
+                "operation": "get_group_members_list",
+                "operationTitle": "Get Group Members List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "ac585417-3ad5-48b7-8564-3853ab7316e1",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Group Members List",
+              "sourceStep": "/api/3/workflow_steps/ba90eddd-d683-4328-bb19-3eb08f3ee318",
+              "targetStep": "/api/3/workflow_steps/18c07ce1-a71d-4155-9829-c815aa14f40b"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "c8264374-ac74-47bd-8e31-70c13b60755e",
+          "collection": "/api/3/workflow_collections/a817b0a6-650f-4f97-9fe8-e6fd65719b86",
+          "triggerLimit": null,
+          "description": "Retrieves the compliance data from IBM Security Guardium Insights.",
+          "name": "Get Compliance Data",
+          "tag": "#IBM Security Guardium Insights",
+          "recordTags": [
+            "IBM",
+            "ibm-security-guardium-insights"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/3fe3def4-7af6-4192-a5e3-c51dabaad9ad",
+          "steps": [
+            {
+              "uuid": "3fe3def4-7af6-4192-a5e3-c51dabaad9ad",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "87190b98-7972-4e72-9070-98db06ae983a",
+                "title": "IBM Security Guardium Insights: Get Compliance Data",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "5ed93db1-c74c-4e38-8382-69a5ce28acdd",
+              "@type": "WorkflowStep",
+              "name": "Get Compliance Data",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "IBM Security Guardium Insights",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "ibm-security-guardium-insights",
+                "operation": "get_compliance_data",
+                "operationTitle": "Get Compliance Data"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "510d9b51-d8da-42b2-bbb1-50edb8412681",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Compliance Data",
+              "sourceStep": "/api/3/workflow_steps/3fe3def4-7af6-4192-a5e3-c51dabaad9ad",
+              "targetStep": "/api/3/workflow_steps/5ed93db1-c74c-4e38-8382-69a5ce28acdd"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "81c59345-2c36-4d2e-a694-5eb79174ca19",
+          "collection": "/api/3/workflow_collections/a817b0a6-650f-4f97-9fe8-e6fd65719b86",
+          "triggerLimit": null,
+          "description": "Retrieves the list of all the connections accounts from IBM Security Guardium Insights based on the input parameters specified.",
+          "name": "Get Connections List",
+          "tag": "#IBM Security Guardium Insights",
+          "recordTags": [
+            "IBM",
+            "ibm-security-guardium-insights"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/0324334b-7648-4a2c-831a-0bd68c153be3",
+          "steps": [
+            {
+              "uuid": "0324334b-7648-4a2c-831a-0bd68c153be3",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "f98623ca-abf9-4320-99b2-11af7997f756",
+                "title": "IBM Security Guardium Insights: Get Connections List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "d3f45da9-f542-4fb2-95cb-14993cf3f685",
+              "@type": "WorkflowStep",
+              "name": "Get Connections List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "IBM Security Guardium Insights",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "ibm-security-guardium-insights",
+                "operation": "get_connections_list",
+                "operationTitle": "Get Connections List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "f1bdd986-be5f-4d7f-90cd-65bd43c1cfa0",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Connections List",
+              "sourceStep": "/api/3/workflow_steps/0324334b-7648-4a2c-831a-0bd68c153be3",
+              "targetStep": "/api/3/workflow_steps/d3f45da9-f542-4fb2-95cb-14993cf3f685"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "44a2126c-152e-4769-b330-044d5dd47978",
+          "collection": "/api/3/workflow_collections/a817b0a6-650f-4f97-9fe8-e6fd65719b86",
+          "triggerLimit": null,
+          "description": "Retrieves the list of all the datasets from IBM Security Guardium Insights based on the input parameters specified.",
+          "name": "Get Datasets List",
+          "tag": "#IBM Security Guardium Insights",
+          "recordTags": [
+            "IBM",
+            "ibm-security-guardium-insights"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/c71e7951-1e17-4234-8546-b54b79b40e2d",
+          "steps": [
+            {
+              "uuid": "c71e7951-1e17-4234-8546-b54b79b40e2d",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "f0318f02-08fb-4d96-8fb1-2323d2504f1c",
+                "title": "IBM Security Guardium Insights: Get Datasets List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "22e7c876-28a1-410a-9e47-422d15b8e332",
+              "@type": "WorkflowStep",
+              "name": "Get Datasets List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "IBM Security Guardium Insights",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "ibm-security-guardium-insights",
+                "operation": "get_datasets_list",
+                "operationTitle": "Get Datasets List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "303f20f2-36d8-4ef2-aef9-4a47cab7917c",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Datasets List",
+              "sourceStep": "/api/3/workflow_steps/c71e7951-1e17-4234-8546-b54b79b40e2d",
+              "targetStep": "/api/3/workflow_steps/22e7c876-28a1-410a-9e47-422d15b8e332"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "147ba71a-cf2e-46b0-930e-79e534b7ebb5",
+          "collection": "/api/3/workflow_collections/a817b0a6-650f-4f97-9fe8-e6fd65719b86",
+          "triggerLimit": null,
+          "description": "Retrieves the data report of specified dataset from IBM Security Guardium Insights.",
+          "name": "Get Dataset Data",
+          "tag": "#IBM Security Guardium Insights",
+          "recordTags": [
+            "IBM",
+            "ibm-security-guardium-insights"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/534a455b-e357-47c6-abfa-fe34e89f9efc",
+          "steps": [
+            {
+              "uuid": "534a455b-e357-47c6-abfa-fe34e89f9efc",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "bf933484-5afc-44da-8016-60f8ffbfae26",
+                "title": "IBM Security Guardium Insights: Get Dataset Data",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "5343e087-eb62-4b38-9084-bc72109274a3",
+              "@type": "WorkflowStep",
+              "name": "Get Dataset Data",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "IBM Security Guardium Insights",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "ibm-security-guardium-insights",
+                "operation": "get_dataset_data",
+                "operationTitle": "Get Dataset Data"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "58415b8a-3c29-4877-a68c-b30be8cd82a1",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Dataset Data",
+              "sourceStep": "/api/3/workflow_steps/534a455b-e357-47c6-abfa-fe34e89f9efc",
+              "targetStep": "/api/3/workflow_steps/5343e087-eb62-4b38-9084-bc72109274a3"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "0d9d84e2-a8b9-48c2-bdc0-69d3a87d3d50",
+          "collection": "/api/3/workflow_collections/a817b0a6-650f-4f97-9fe8-e6fd65719b86",
+          "triggerLimit": null,
+          "description": "Retrieves the list of all the notifications from IBM Security Guardium Insights based on the input parameters specified.",
+          "name": "Get Notifications List",
+          "tag": "#IBM Security Guardium Insights",
+          "recordTags": [
+            "IBM",
+            "ibm-security-guardium-insights"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/cc5d2c90-11eb-4b4b-97c9-16ad695388a9",
+          "steps": [
+            {
+              "uuid": "cc5d2c90-11eb-4b4b-97c9-16ad695388a9",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "772e49be-a241-44a5-99e0-e3af2eadfc1b",
+                "title": "IBM Security Guardium Insights: Get Notifications List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "7b368097-8324-457f-8874-0e3a034af1bf",
+              "@type": "WorkflowStep",
+              "name": "Get Notifications List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "IBM Security Guardium Insights",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "ibm-security-guardium-insights",
+                "operation": "get_notifications_list",
+                "operationTitle": "Get Notifications List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "3eee6088-2643-4a5e-877c-13dd9486c696",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Notifications List",
+              "sourceStep": "/api/3/workflow_steps/cc5d2c90-11eb-4b4b-97c9-16ad695388a9",
+              "targetStep": "/api/3/workflow_steps/7b368097-8324-457f-8874-0e3a034af1bf"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "a5ef6513-00d3-4c55-a756-1bc01f5903a2",
+          "collection": "/api/3/workflow_collections/a817b0a6-650f-4f97-9fe8-e6fd65719b86",
+          "triggerLimit": null,
+          "description": "Retrieves the list of all the scheduled jobs and the linked tasks from IBM Security Guardium Insights based on the input parameters specified.",
+          "name": "Get Schedules List",
+          "tag": "#IBM Security Guardium Insights",
+          "recordTags": [
+            "IBM",
+            "ibm-security-guardium-insights"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/3a1d9225-7fe5-4d3e-a1a5-1efb759f2eec",
+          "steps": [
+            {
+              "uuid": "3a1d9225-7fe5-4d3e-a1a5-1efb759f2eec",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "6b8d9ebe-e25b-4f3d-b2d2-4f74bf33f183",
+                "title": "IBM Security Guardium Insights: Get Schedules List",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "50404965-47af-43ba-9c4f-b568b58f1c71",
+              "@type": "WorkflowStep",
+              "name": "Get Schedules List",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "IBM Security Guardium Insights",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "ibm-security-guardium-insights",
+                "operation": "get_schedules_list",
+                "operationTitle": "Get Schedules List"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "684a099f-39e9-49ec-8386-e6ff6e929077",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Schedules List",
+              "sourceStep": "/api/3/workflow_steps/3a1d9225-7fe5-4d3e-a1a5-1efb759f2eec",
+              "targetStep": "/api/3/workflow_steps/50404965-47af-43ba-9c4f-b568b58f1c71"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "726ce4c5-40db-48f6-9bd2-da32ab8ff402",
+          "collection": "/api/3/workflow_collections/a817b0a6-650f-4f97-9fe8-e6fd65719b86",
+          "triggerLimit": null,
+          "description": "Retrieves the details of the scheduled job from IBM Security Guardium Insights based on the schedule ID specified.",
+          "name": "Get Scheduled Job Details",
+          "tag": "#IBM Security Guardium Insights",
+          "recordTags": [
+            "IBM",
+            "ibm-security-guardium-insights"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/18930497-07de-4b27-bd19-8e0e58f65a73",
+          "steps": [
+            {
+              "uuid": "18930497-07de-4b27-bd19-8e0e58f65a73",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "f6d24e27-8421-4158-a6c3-af4b6a0ba578",
+                "title": "IBM Security Guardium Insights: Get Scheduled Job Details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "c1a56dbd-fa96-477a-9c8d-085fe55804d4",
+              "@type": "WorkflowStep",
+              "name": "Get Scheduled Job Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "IBM Security Guardium Insights",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "ibm-security-guardium-insights",
+                "operation": "get_scheduled_job_details",
+                "operationTitle": "Get Scheduled Job Details"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "c18458cf-f6cf-41c8-871c-27c7e13342d0",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Scheduled Job Details",
+              "sourceStep": "/api/3/workflow_steps/18930497-07de-4b27-bd19-8e0e58f65a73",
+              "targetStep": "/api/3/workflow_steps/c1a56dbd-fa96-477a-9c8d-085fe55804d4"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
