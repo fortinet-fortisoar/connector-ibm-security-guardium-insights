@@ -72,12 +72,10 @@ def _check_health(config):
 
 def check_params(params):
     parameter = {k: v for k, v in params.items() if v is not None and v != ''}
-    if parameter.get('limit'):
-        if parameter.get('limit') < 1:
-            raise ConnectorError('Invalid limit parameter')
-    if parameter.get('offset'):
-        if parameter.get('offset') < 1:
-            raise ConnectorError('Invalid offset parameter')
+    if (isinstance(parameter.get('limit'), int) and parameter.get('limit') < 1) or (isinstance(parameter.get('Limit'), int) and parameter.get('Limit') < 1):
+        raise ConnectorError('Invalid limit parameter')
+    if (isinstance(parameter.get('offset'), int) and parameter.get('offset') < 0) or (isinstance(parameter.get('Offset'), int) and parameter.get('Offset') < 0):
+        raise ConnectorError('Invalid offset parameter')
     return parameter
 
 
