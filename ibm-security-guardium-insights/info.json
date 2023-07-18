@@ -24,7 +24,7 @@
       {
         "title": "Encoded Token",
         "name": "encoded_token",
-        "description": "Encoded Token which you get when you craete a new API Key in IBM Security Guardium Insights. For details: https://www.ibm.com/docs/en/guardium-insights/3.0.x?topic=administering-api-keys#settings_api",
+        "description": "Encoded Token which you get when you create a new API Key in IBM Security Guardium Insights. For details: https://www.ibm.com/docs/en/guardium-insights/3.0.x?topic=administering-api-keys#settings_api",
         "type": "password",
         "visible": true,
         "editable": true,
@@ -182,7 +182,7 @@
           "visible": true,
           "editable": true,
           "required": true,
-          "tooltip": "Specify the policy to retrieve details of policy from the IBM Security Guardium Insights."
+          "tooltip": "Specify the policy ID to retrieve details of policy from the IBM Security Guardium Insights."
         }
       ],
       "output_schema": {
@@ -1253,8 +1253,8 @@
             "NOT_COMPLETE"
           ],
           "name": "filter.state",
-          "tooltip": "Specify the state of notifications to retrieve from the IBM Security Guardium Insights.",
-          "description": "Specify the state of notifications to retrieve from the IBM Security Guardium Insights."
+          "tooltip": "Specify the state of notifications to retrieve from the IBM Security Guardium Insights. Default State is INCLUDE_ALL.",
+          "description": "Specify the state of notifications to retrieve from the IBM Security Guardium Insights. Select any of the following: INCLUDE_ALL, UNREAD_ONLY, READ_ONLY, COMPLETE_ONLY, NOT_COMPLETE. Default State is INCLUDE_ALL."
         },
         {
           "title": "Limit",
@@ -1336,7 +1336,7 @@
           "editable": true,
           "visible": true,
           "type": "integer",
-          "name": "limit",
+          "name": "Limit",
           "tooltip": "Specify the maximum number of records that this operation should return.",
           "description": "Specify the maximum number of records that this operation should return."
         },
@@ -1346,7 +1346,7 @@
           "editable": true,
           "visible": true,
           "type": "integer",
-          "name": "offset",
+          "name": "Offset",
           "tooltip": "To skip the first n element based upon the value you specify in there",
           "description": "Specify the count of the first few records to skip while retrieving response."
         }
