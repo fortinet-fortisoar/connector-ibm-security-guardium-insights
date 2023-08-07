@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "label": "IBM Security Guardium Insights",
   "category": "Monitoring",
-  "description": "IBM Security Guardium Insights is a modern data security solution built to adapt to changing environments, connect to critical IT and security tools, streamline compliance and audit processes, and intelligently respond to data threats.",
+  "description": "IBM Security Guardium Insights is a data security platform that provides real-time monitoring, analysis, and protection for sensitive information across hybrid cloud environments. It helps organizations identify and prioritize potential threats, ensuring data privacy and compliance by detecting unusual activities and vulnerabilities. With its advanced analytics and machine learning capabilities, Guardium Insights helps businesses safeguard critical data assets from unauthorized access, ensuring data integrity and reducing the risk of data breaches.",
   "publisher": "Fortinet",
   "cs_approved": true,
   "cs_compatible": true,
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/ibm-security-guardium-insights/645/ibm-security-guardium-insights-v1-0-0",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "configuration": {
@@ -24,7 +24,7 @@
       {
         "title": "Encoded Token",
         "name": "encoded_token",
-        "description": "Encoded Token which you get when you create a new API Key in IBM Security Guardium Insights. For details: https://www.ibm.com/docs/en/guardium-insights/3.0.x?topic=administering-api-keys#settings_api",
+        "description": "Encoded Token received when creating a new API Key in IBM Security Guardium Insights.  \n\nRefer to the IBM Guardium Insights documentation to Create API Keys \n\nCopy the Encoded token to use in this parameter. \n\nFor more details, refer to the IBM Guardium Insights documentation at https://www.ibm.com/docs/en/guardium-insights/3.0.x?topic=administering-api-keys#settings_api. ",
         "type": "password",
         "visible": true,
         "editable": true,
@@ -45,7 +45,7 @@
   "operations": [
     {
       "operation": "get_report_categories_list",
-      "description": "Retrieves the list of all the available report categories from IBM Security Guardium Insights based on the input parameters specified.",
+      "description": "Retrieves a list of all the available report categories from IBM Security Guardium Insights based on the report ID specified. ",
       "category": "investigation",
       "annotation": "get_report_categories_list",
       "title": "Get Report Categories List",
@@ -53,12 +53,12 @@
         {
           "title": "Report ID",
           "name": "report_id",
-          "description": "Specify the ID of report to retrieve its report category from the IBM Security Guardium Insights. You can get report ID from 'Get Reports List' action.",
+          "description": "Specify the ID of report to retrieve its categories list from IBM Security Guardium Insights. You can get report ID from the Get Reports List action. ",
           "type": "text",
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Specify the ID of report to retrieve its report category from the IBM Security Guardium Insights. "
+          "tooltip": "Specify the ID of report to retrieve its categories list from IBM Security Guardium Insights."
         }
       ],
       "output_schema": {
@@ -74,7 +74,7 @@
     },
     {
       "operation": "get_reports_list",
-      "description": "Retrieves the list of all the reports from IBM Security Guardium Insights based on the input parameters specified.",
+      "description": "Retrieves a list of all the reports from IBM Security Guardium Insights based on the category ID specified. ",
       "category": "investigation",
       "annotation": "get_reports_list",
       "title": "Get Reports List",
@@ -82,12 +82,12 @@
         {
           "title": "Category ID",
           "name": "category_id",
-          "description": "Specify the category ID of report to retrieve from the IBM Security Guardium Insights. You can get category ID from 'Get Report Categories List' action.",
+          "description": "Specify the category ID of report to retrieve the reports list from IBM Security Guardium Insights. You can get category ID from Get Report Categories List action. ",
           "type": "text",
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Specify the category ID of report to retrieve from the IBM Security Guardium Insights."
+          "tooltip": "Specify the category ID of report to retrieve the reports list from IBM Security Guardium Insights."
         }
       ],
       "output_schema": {
@@ -134,7 +134,7 @@
     },
     {
       "operation": "get_policies_list",
-      "description": "Retrieves the list of all the policies from IBM Security Guardium Insights.",
+      "description": "Retrieves a list of all the policies from IBM Security Guardium Insights. ",
       "category": "investigation",
       "annotation": "get_policies_list",
       "title": "Get Policies List",
@@ -169,7 +169,7 @@
     },
     {
       "operation": "get_policy_details",
-      "description": "Retrieves the details of the policy from IBM Security Guardium Insights based on the policy ID specified.",
+      "description": "Retrieves the details of a policy from IBM Security Guardium Insights based on the policy ID specified. ",
       "category": "investigation",
       "annotation": "get_policy_details",
       "title": "Get Policy Details",
@@ -177,12 +177,12 @@
         {
           "title": "Policy ID",
           "name": "policy_id",
-          "description": "Specify the policy ID to retrieve details of policy from the IBM Security Guardium Insights. You can get policy ID from 'Get Policies List' action.",
+          "description": "Specify the policy ID to retrieve its details from IBM Security Guardium Insights. You can get the policy ID from the Get Policies List action. ",
           "type": "text",
           "visible": true,
           "editable": true,
           "required": true,
-          "tooltip": "Specify the policy ID to retrieve details of policy from the IBM Security Guardium Insights."
+          "tooltip": "Specify the policy ID to retrieve its details from IBM Security Guardium Insights."
         }
       ],
       "output_schema": {
@@ -246,7 +246,7 @@
     },
     {
       "operation": "get_cases_list",
-      "description": "Retrieves the list of all the cases from IBM Security Guardium Insights based on the input parameters specified.",
+      "description": "Retrieves a list of all the cases from IBM Security Guardium Insights based on the case ID and other input parameters specified. ",
       "category": "investigation",
       "annotation": "get_cases_list",
       "title": "Get Cases List",
@@ -254,12 +254,12 @@
         {
           "title": "Case ID",
           "name": "case_id",
-          "description": "Specify the case ID to retrieve from the IBM Security Guardium Insights.",
+          "description": "Specify the case ID to retrieve the cases list from IBM Security Guardium Insights. ",
           "type": "text",
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Specify the case ID to retrieve from the IBM Security Guardium Insights."
+          "tooltip": "Specify the case ID to retrieve the cases list from IBM Security Guardium Insights. "
         },
         {
           "title": "Limit",
@@ -268,8 +268,8 @@
           "visible": true,
           "type": "integer",
           "name": "limit",
-          "tooltip": "Specify the maximum number of cases that this operation should return.",
-          "description": "Specify the maximum number of cases that this operation should return."
+          "tooltip": "Specify the maximum number of cases that this operation should return from IBM Security Guardium Insights. ",
+          "description": "Specify the maximum number of cases that this operation should return from IBM Security Guardium Insights. "
         },
         {
           "title": "Offset",
@@ -278,8 +278,8 @@
           "visible": true,
           "type": "integer",
           "name": "offset",
-          "tooltip": "To skip the first n element based upon the value you specify in there",
-          "description": "Specify the count of the first few records to skip while retrieving response."
+          "tooltip": "Specify the count of the first few records to skip while retrieving the list from IBM Security Guardium Insights. ",
+          "description": "Specify the count of the first few records to skip while retrieving the list from IBM Security Guardium Insights. "
         }
       ],
       "output_schema": {
@@ -434,7 +434,7 @@
     },
     {
       "operation": "get_tasks_list",
-      "description": "Retrieves the list of all the tasks from IBM Security Guardium Insights based on the input parameters specified.",
+      "description": "Retrieves a list of all the tasks from IBM Security Guardium Insights based on the case ID and the task ID specified. ",
       "category": "investigation",
       "annotation": "get_tasks_list",
       "title": "Get Tasks List",
@@ -442,22 +442,22 @@
         {
           "title": "Case ID",
           "name": "case_id",
-          "description": "Specify the case ID to retrieve all the tasks linked to it from the IBM Security Guardium Insights. You can get Case ID from 'Get Cases List' action",
+          "description": "Specify the case ID to retrieve all its linked tasks from IBM Security Guardium Insights. You can get Case ID from the Get Cases List action. ",
           "type": "text",
           "visible": true,
           "editable": true,
           "required": true,
-          "tooltip": "Specify the case ID to retrieve all the tasks linked to it from the IBM Security Guardium Insights."
+          "tooltip": "Specify the case ID to retrieve all its linked tasks from IBM Security Guardium Insights."
         },
         {
           "title": "Task ID",
           "name": "task_id",
-          "description": "Specify the task ID to retrieve from the IBM Security Guardium Insights.",
+          "description": "Specify the task ID to retrieve only the specified task from IBM Security Guardium Insights. ",
           "type": "text",
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Specify the task ID to retrieve from the IBM Security Guardium Insights."
+          "tooltip": "Specify the task ID to retrieve only the specified task from IBM Security Guardium Insights. "
         }
       ],
       "output_schema": {
@@ -563,7 +563,7 @@
     },
     {
       "operation": "get_groups_list",
-      "description": "Retrieves the list of all the groups from IBM Security Guardium Insights.",
+      "description": "Retrieves a list of all the groups from IBM Security Guardium Insights. ",
       "category": "investigation",
       "annotation": "get_groups_list",
       "title": "Get Groups List",
@@ -621,7 +621,7 @@
     },
     {
       "operation": "get_group_members_list",
-      "description": "Retrieves the list of all the members of the group from IBM Security Guardium Insights based on the group ID specified.",
+      "description": "Retrieves a list of all the members of the group from IBM Security Guardium Insights based on the group ID specified. ",
       "category": "investigation",
       "annotation": "get_group_members_list",
       "title": "Get Group Members List",
@@ -629,12 +629,12 @@
         {
           "title": "Group ID",
           "name": "group_id",
-          "description": "Specify the group ID or comma-separated group IDs to retrieve group members from the IBM Security Guardium Insights. You can get group ID from 'Get groups List' action.",
+          "description": "Specify the group ID or a comma-separated list of group IDs to retrieve its members from IBM Security Guardium Insights. You can get group ID from the Get groups List action. ",
           "type": "text",
           "visible": true,
           "editable": true,
           "required": true,
-          "tooltip": "Specify the group ID or comma-separated group IDs to retrieve group members from the IBM Security Guardium Insights."
+          "tooltip": "Specify the group ID or a comma-separated list of group IDs to retrieve its members from IBM Security Guardium Insights."
         }
       ],
       "output_schema": {
@@ -690,7 +690,7 @@
     },
     {
       "operation": "get_compliance_data",
-      "description": "Retrieves the compliance data from IBM Security Guardium Insights.",
+      "description": "Retrieves the compliance data from IBM Security Guardium Insights. ",
       "category": "investigation",
       "annotation": "get_compliance_data",
       "title": "Get Compliance Data",
@@ -1038,7 +1038,7 @@
     },
     {
       "operation": "get_connections_list",
-      "description": "Retrieves the list of all the connections accounts from IBM Security Guardium Insights based on the input parameters specified.",
+      "description": "Retrieves a list of all the accounts used for connections from IBM Security Guardium Insights based on the account ID and the account access key specified. ",
       "category": "investigation",
       "annotation": "get_connections_list",
       "title": "Get Connections List",
@@ -1046,22 +1046,22 @@
         {
           "title": "Account ID",
           "name": "account_id",
-          "description": "Specify the account ID to retrieve connection account from the IBM Security Guardium Insights.",
+          "description": "Specify the account ID to retrieve connections associated with the specified account from IBM Security Guardium Insights. ",
           "type": "text",
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Specify the account ID to retrieve connection account from the IBM Security Guardium Insights."
+          "tooltip": "Specify the account ID to retrieve connections associated with the specified account from IBM Security Guardium Insights. "
         },
         {
           "title": "Account Access Key",
           "name": "access_key",
-          "description": "Specify the account access key to retrieve connection account from the IBM Security Guardium Insights.",
+          "description": "Specify the account access key to retrieve connections associated with the specified access key from IBM Security Guardium Insights. ",
           "type": "text",
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Specify the account access key to retrieve connection account from the IBM Security Guardium Insights."
+          "tooltip": "Specify the account access key to retrieve connections associated with the specified access key from IBM Security Guardium Insights. "
         }
       ],
       "output_schema": {
@@ -1083,7 +1083,7 @@
     },
     {
       "operation": "get_datasets_list",
-      "description": "Retrieves the list of all the datasets from IBM Security Guardium Insights based on the input parameters specified.",
+      "description": "Retrieves the list of all the datasets from IBM Security Guardium Insights based on the time period and other input parameters specified. ",
       "category": "investigation",
       "annotation": "get_datasets_list",
       "title": "Get Datasets List",
@@ -1091,22 +1091,22 @@
         {
           "title": "Start Time",
           "name": "filter.start_time",
-          "description": "Specify the datetime to retrieve datasets created at this time or later from the IBM Security Guardium Insights.",
+          "description": "Specify the start date and time of the duration within which the datasets were created to retrieve their list from IBM Security Guardium Insights. ",
           "type": "datetime",
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Specify the datetime to retrieve datasets created at this time or later from the IBM Security Guardium Insights."
+          "tooltip": "Specify the start date and time of the duration within which the datasets were created to retrieve their list from IBM Security Guardium Insights. "
         },
         {
           "title": "End Time",
           "name": "filter.end_time",
-          "description": "Specify the datetime to retrieve datasets created before this time from the IBM Security Guardium Insights.",
+          "description": "Specify the end date and time of the duration within which the datasets were created to retrieve their list from IBM Security Guardium Insights. ",
           "type": "datetime",
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Specify the datetime to retrieve datasets created before this time from the IBM Security Guardium Insights."
+          "tooltip": "Specify the end date and time of the duration within which the datasets were created to retrieve their list from IBM Security Guardium Insights. "
         },
         {
           "title": "Limit",
@@ -1156,7 +1156,7 @@
     },
     {
       "operation": "get_dataset_data",
-      "description": "Retrieves the data report of specified dataset from IBM Security Guardium Insights.",
+      "description": "Retrieves the data report of specified dataset from IBM Security Guardium Insights based on the dataset name and other input parameters specified. ",
       "category": "investigation",
       "annotation": "get_dataset_data",
       "title": "Get Dataset Data",
@@ -1214,7 +1214,7 @@
     },
     {
       "operation": "get_notifications_list",
-      "description": "Retrieves the list of all the notifications from IBM Security Guardium Insights based on the input parameters specified.",
+      "description": "Retrieves the list of all the notifications from IBM Security Guardium Insights based on the date range and other input parameters specified. ",
       "category": "investigation",
       "annotation": "get_notifications_list",
       "title": "Get Notifications List",
@@ -1222,22 +1222,22 @@
         {
           "title": "Start Time",
           "name": "filter.start_time",
-          "description": "Specify the datetime to retrieve notifications created at this time or later from the IBM Security Guardium Insights.",
+          "description": "Specify the start date and time of the duration within which the notifications were created to retrieve their list from IBM Security Guardium Insights. ",
           "type": "datetime",
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Specify the datetime to retrieve notifications created at this time or later from the IBM Security Guardium Insights."
+          "tooltip": "Specify the start date and time of the duration within which the notifications were created to retrieve their list from IBM Security Guardium Insights. "
         },
         {
           "title": "End Time",
           "name": "filter.end_time",
-          "description": "Specify the datetime to retrieve notifications created before this time from the IBM Security Guardium Insights.",
+          "description": "Specify the end date and time of the duration within which the notifications were created to retrieve their list from IBM Security Guardium Insights. ",
           "type": "datetime",
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Specify the datetime to retrieve notifications created before this time from the IBM Security Guardium Insights."
+          "tooltip": "Specify the end date and time of the duration within which the notifications were created to retrieve their list from IBM Security Guardium Insights. "
         },
         {
           "title": "State",
@@ -1254,7 +1254,7 @@
           ],
           "name": "filter.state",
           "tooltip": "Specify the state of notifications to retrieve from the IBM Security Guardium Insights. Default State is INCLUDE_ALL.",
-          "description": "Specify the state of notifications to retrieve from the IBM Security Guardium Insights. Select any of the following: INCLUDE_ALL, UNREAD_ONLY, READ_ONLY, COMPLETE_ONLY, NOT_COMPLETE. Default State is INCLUDE_ALL."
+          "description": "Specify the state of notifications to retrieve from IBM Security Guardium Insights. You can select from the following options:  \n\nINCLUDE_ALL \n\nUNREAD_ONLY \n\nREAD_ONLY \n\nCOMPLETE_ONLY \n\nNOT_COMPLETE \n\nDefault State is INCLUDE_ALL. "
         },
         {
           "title": "Limit",
@@ -1325,7 +1325,7 @@
     },
     {
       "operation": "get_schedules_list",
-      "description": "Retrieves the list of all the scheduled jobs and the linked tasks from IBM Security Guardium Insights based on the input parameters specified.",
+      "description": "Retrieves the list of all the scheduled jobs and the linked tasks from IBM Security Guardium Insights based on the input parameters specified. ",
       "category": "investigation",
       "annotation": "get_schedules_list",
       "title": "Get Schedules List",
@@ -1387,7 +1387,7 @@
     },
     {
       "operation": "get_scheduled_job_details",
-      "description": "Retrieves the details of the scheduled job from IBM Security Guardium Insights based on the schedule ID specified.",
+      "description": "Retrieves the details of the scheduled job from IBM Security Guardium Insights based on the schedule ID specified. ",
       "category": "investigation",
       "annotation": "get_scheduled_job_details",
       "title": "Get Scheduled Job Details",
@@ -1395,7 +1395,7 @@
         {
           "title": "Schedule ID",
           "name": "schedule_id",
-          "description": "Specify the schedule ID to retrieve details of scheduled job from the IBM Security Guardium Insights. You can get schedule ID from 'Get Schedules List' action.",
+          "description": "Specify the schedule ID to retrieve the details of the associated scheduled job from IBM Security Guardium Insights. You can get schedule ID from the Get Schedules List action. ",
           "type": "text",
           "visible": true,
           "editable": true,
